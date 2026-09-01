@@ -1,0 +1,217 @@
+/* Shared animated background for Home and About */
+
+.portfolio-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  background: linear-gradient(
+    -45deg,
+    #fff0f5,
+    #eaf6ff,
+    #f4edff,
+    #fff8e7
+  );
+  background-size: 400% 400%;
+  animation: portfolioGradient 18s ease infinite;
+}
+
+/* Floating decorative symbols */
+.portfolio-background span {
+  position: absolute;
+  display: block;
+  color: #3e31b7;
+  opacity: 0.25;
+  font-size: clamp(28px, 4vw, 60px);
+  line-height: 1;
+  animation:
+   portfolioFloat 6s ease-in-out infinite,
+   portfolioViolet 2s linear infinite;
+}
+
+.portfolio-background span:nth-child(1) {
+  top: 15%;
+  left: 8%;
+}
+
+.portfolio-background span:nth-child(2) {
+  top: 25%;
+  right: 12%;
+  animation-delay: -2s;
+}
+
+.portfolio-background span:nth-child(3) {
+  bottom: 16%;
+  left: 18%;
+  animation-delay: -4s;
+}
+
+.portfolio-background span:nth-child(4) {
+  bottom: 20%;
+  right: 8%;
+  animation-delay: -6s;
+}
+
+.portfolio-background span:nth-child(5) {
+  top: 10%;
+  left: 48%;
+  animation-delay: -3s;
+}
+
+/* Newly added Positions and staggered movement for the additional shapes */
+
+.portfolio-background span:nth-child(6) {
+  top: 12%;
+  left: 28%;
+  animation-delay: -1s;
+}
+
+.portfolio-background span:nth-child(7) {
+  top: 8%;
+  left: 76%;
+  animation-delay: -2.5s;
+}
+
+.portfolio-background span:nth-child(8) {
+  top: 34%;
+  left: 16%;
+  animation-delay: -4s;
+}
+
+.portfolio-background span:nth-child(9) {
+  top: 38%;
+  left: 40%;
+  animation-delay: -1.5s;
+}
+
+.portfolio-background span:nth-child(10) {
+  top: 44%;
+  left: 65%;
+  animation-delay: -3s;
+}
+
+.portfolio-background span:nth-child(11) {
+  top: 52%;
+  left: 5%;
+  animation-delay: -5s;
+}
+
+.portfolio-background span:nth-child(12) {
+  top: 58%;
+  left: 29%;
+  animation-delay: -0.5s;
+}
+
+.portfolio-background span:nth-child(13) {
+  top: 63%;
+  left: 52%;
+  animation-delay: -3.5s;
+}
+
+.portfolio-background span:nth-child(14) {
+  top: 56%;
+  left: 85%;
+  animation-delay: -6s;
+}
+
+.portfolio-background span:nth-child(15) {
+  top: 74%;
+  left: 38%;
+  animation-delay: -2s;
+}
+
+.portfolio-background span:nth-child(16) {
+  top: 85%;
+  left: 62%;
+  animation-delay: -4.5s;
+}
+
+.portfolio-background span:nth-child(17) {
+  top: 86%;
+  left: 90%;
+  animation-delay: -7s;
+}
+
+.portfolio-background span:nth-child(18) {
+  top: 29%;
+  left: 58%;
+  animation-delay: -5.5s;
+}
+
+.portfolio-background span:nth-child(19) {
+  top: 70%;
+  left: 74%;
+  animation-delay: -6.5s;
+}
+
+.portfolio-background span:nth-child(20) {
+  top: 90%;
+  left: 4%;
+  animation-delay: -7.5s;
+}
+
+/* Keep content above the background */
+body.cute-background-enabled main,
+body.cute-background-enabled #footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Allow the background to show through the page sections */
+body.cute-background-enabled main,
+body.cute-background-enabled main section {
+  background: transparent;
+}
+
+/* Slowly shift the pastel colours */
+@keyframes portfolioGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Gently float and rotate the symbols */
+@keyframes portfolioFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(12deg);
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-background,
+  .portfolio-background span {
+    animation: none;
+  }
+}
+/* Cycle through different violet shades */
+@keyframes portfolioViolet {
+  0%,
+  100% {
+    color: #e7e6e9;
+  }
+
+  25% {
+    color: #a855f7;
+  }
+
+  50% {
+    color: #c084fc;
+  }
+
+  75% {
+    color: #641adb;
+  }
+}
